@@ -1,0 +1,22 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "main": "shipit-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "axios-mock-adapter": "^1.18.2",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^5.0.0-alpha.8",
+    "jsonschema": "^1.2.6",
+    "supertest": "^4.0.2"
+  },
+  "description": ""
+}
