@@ -11,12 +11,14 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "axios-mock-adapter": "^1.18.2",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^5.0.0-alpha.8",
     "jsonschema": "^1.2.6",
     "supertest": "^4.0.2"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "axios-mock-adapter": "^1.19.0"
+  }
 }

@@ -1,4 +1,8 @@
 "use strict";
+const shipItApi = require("../shipItApi");
+
+shipItApi.shipProduct = jest.fn();
+
 
 const request = require("supertest");
 const app = require("../app");
@@ -7,6 +11,8 @@ const app = require("../app");
 
 describe("POST /", function () {
   test("valid", async function () {
+    shipItApi.shipProduct.mockReturnValue(1234);
+    
     const resp = await request(app).post("/shipments").send({
       productId: 1000,
       name: "Test Tester",
@@ -18,14 +24,14 @@ describe("POST /", function () {
     expect(resp.body).toEqual({ shipped: expect.any(Number) });
   });
 
-  // test("invalid", async function () {
-  //   const resp = await request(app).post("/shipments").send({
-  //     productId: 1,
-  //     name: "Test Tester",
-  //     zip: "12345-6789",
-  //   });
+  test("invalid", async function () {
+    const resp = await request(app).post("/shipments").send({
+      productId: 1,
+      name: "Test Tester",
+      zip: "12345-6789",
+    });
 
-  //   expect(resp.statusCode).toEqual(404);
-  // });
+    expect(resp.statusCode).toEqual(404);
+  });
 });
 
